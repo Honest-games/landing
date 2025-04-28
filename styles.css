@@ -4,12 +4,20 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-size: 19px;
+    /*font-size: 1.2rem;*/
+}
+
+p {
+    font-size: 1.2rem;
 }
 
 body {
     font-family: 'Segoe UI', sans-serif;
     background-color: #fff3e9;
     color: #2d2d2d;
+    overflow-x: hidden;
+    max-width: 100vw;
 }
 
 header {
@@ -21,9 +29,22 @@ header {
 }
 
 .logo {
+    font-size: 30px;
     font-weight: bold;
-    font-size: 1.2rem;
     color: #c6561a;
+}
+
+.logo-img {
+    height: 50px;
+    width: 50px;
+}
+
+nav {
+    display: flex;
+    flex-grow: 1;
+    align-items: flex-end;
+    justify-content: flex-end;
+    margin: 0 50px;
 }
 
 nav ul {
@@ -39,17 +60,17 @@ nav a {
 }
 
 section {
-    width: 900px;
+    max-width: 1200px;
+    width: 80%;
     margin: auto;
 }
 
 .hero {
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    padding: 60px 40px;
     background-color: #fff3e9;
+    margin-bottom: 100px;
 }
 
 .hero-text {
@@ -71,6 +92,7 @@ section {
 
 .hero button {
     background-color: #a8431e;
+    background-color: #a8431e;
     color: white;
     padding: 12px 24px;
     font-size: 1rem;
@@ -80,8 +102,8 @@ section {
 }
 
 .hero img {
-    max-width: 400px;
-    width: 100%;
+    max-width: 600px;
+    width: 50%;
     margin-top: 20px;
 }
 
@@ -105,7 +127,7 @@ section {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    padding-left: 10%;
+    padding: 0 10%;
     margin-bottom: 150px;
 }
 
@@ -114,6 +136,7 @@ section {
     position: absolute;
     left: 0;
     width: 40%;
+    max-width: 700px;
 }
 
 .people2 {
@@ -131,27 +154,64 @@ section {
 .deck-section {
     display: flex;
     justify-content: space-between;
-    gap: 40px;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    padding-right: 270px;
+    padding-right: 20%;
     margin-bottom: 200px;
 }
 
-.deck-section img {
+.deck-section p {
+    text-shadow:
+            rgba(255, 243, 233, 0.5) 2px 2px 1px,
+            rgba(255, 243, 233, 0.5) 2px -2px 1px,
+            rgba(255, 243, 233, 0.5) -2px 2px 1px,
+            rgba(255, 243, 233, 0.5) -2px -2px 1px;
+}
+
+.deck-section .deck-cards {
     position: absolute;
-    right: -15%;
-    /* scale: 1.4; */
+    margin-left: 50%;
     width: 50%;
     object-fit: contain;
-    /* height: 551px; */
-    /* object-position: bottom; */
     z-index: -2;
     max-height: 700px;
+    max-width: 570px;
 }
 
 .openness-levels h3 {
     font-size: 1.3rem;
+    margin-top: 40px;
+}
+
+.openness-levels span {
+    text-shadow: none;
+}
+
+.openness-levels .level-1 {
+    background-color: #B7DBCA;
+    color: #517C68;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.openness-levels .level-2 {
+    background-color: #F3BA77;
+    color: #A86414;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.openness-levels .level-3 {
+    background-color: #B093CF;
+    color: #5A1E9C;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.deck-section .app-store {
+    display: flex;
+    width: 250px;
+    margin: 50px auto;
+    cursor: pointer;
+    /*margin: auto;*/
 }
 
 footer {
@@ -162,16 +222,89 @@ footer {
 }
 
 @media (max-width: 768px) {
-    .hero,
-    .brand-idea,
-    .deck-section {
+    section {
         flex-direction: column;
         text-align: center;
+        width: 80%;
     }
 
-    nav ul {
-        flex-direction: column;
-        gap: 10px;
+    .logo {
+        /*margin: auto;*/
+    }
+
+    .logo-img {
+        display: flex;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .hero {
+        margin-top: 0;
+        margin-bottom: 100px;
+    }
+
+    .hero-text {
+        order: 2;
+        max-width: 100%;
+    }
+
+    .hero img {
+        order: 1;
+        width: 100%;
+        margin-bottom: 50px;
+    }
+
+    .brand-idea {
+        padding: 0;
+        margin-bottom: 50px;
+    }
+
+    .brand-idea img {
+        display: none;
+        /*width: 100%;*/
+        /*margin-top: -200px;*/
+        /*opacity: 0.4;*/
+    }
+
+    .people2 {
+        margin: 0 0 50px 0;
+        width: 100%;
+    }
+    .people2 img {
+        margin: 0;
+        width: 100%;
+    }
+
+    .deck-section {
+        padding: 0;
+    }
+
+    .deck-section>div {
+        margin: 0;
+    }
+
+    .deck-section p {
+        /*margin: 0;*/
+        width: 100%;
+    }
+
+    .deck-section .deck-cards {
+        margin-left: 0;
+        left: 0;
+        opacity: 0.3;
+        width: 95%;
+    }
+}
+
+@media (min-width: 1500px) {
+    .brand-idea {
+        /*padding-left: 0;*/
+    }
+
+    .deck-section .deck-cards {
+        margin-left: 800px;
     }
 }
 
