@@ -24,7 +24,8 @@ jobs:
         uses: garygrossgarten/github-action-scp@release
         with:
           local: .
-          remote: /honest/honest-landing
+          remote: /honest/landing
+          concurrency: 20
           host: ${{env.SSH_IP}}
           username: ${{env.SSH_USER}}
           password: ${{env.SSH_PASSWORD}}
@@ -36,6 +37,6 @@ jobs:
           password: ${{env.SSH_PASSWORD}}
           port: 22
           script: |
-            cd /honest/honest-landing/
+            cd /honest/landing/
             docker-compose down --remove-orphans
             docker-compose up -d
