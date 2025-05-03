@@ -3,11 +3,8 @@ name: honest-landing
 
 services:
   honest-landing:
-    image: nginx:alpine
+    image: ${IMAGE}
     container_name: honest-landing
-    volumes:
-      - ./src:/usr/share/nginx/html
-    command: ["nginx", "-g", "daemon off;"]
     networks:
       - dc-net
 
