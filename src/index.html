@@ -12,6 +12,28 @@
     <meta property="og:image" content="https://chestno-game.ru/img/people2.png" />
     <meta property="og:url" content="https://chestno-game.ru" />
     <meta property="og:type" content="website" />
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            addRandomLogo();
+            addScroll();
+        });
+        function addRandomLogo() {
+            const logo = document.querySelector("#logo-img");
+            const count = 6;
+            const i = parseInt(localStorage.getItem("logoIndex")) || 0;
+            localStorage.setItem("logoIndex", ((i + 1) % (count)).toString());
+            logo.src = `img/logo/logo${i}.svg`;
+        }
+        function addScroll() {
+            const playButton = document.querySelectorAll(".play-button");
+            const appStoreLink = document.querySelector(".app-store-link");
+
+            playButton.forEach(b => b.addEventListener("click", function (event) {
+                event.preventDefault();
+                appStoreLink.scrollIntoView({behavior: "smooth"});
+            }));
+        }
+    </script>
 </head>
 <body>
 <header>
@@ -22,10 +44,10 @@
             <li><a href="#lets-talk">Об играх</a></li>
         </ul>
     </nav>
-    <a href="#lets-talk" class="play-button-link">
+    <a class="play-button-link">
         <button class="play-button">К играм</button>
     </a>
-    <img class="logo-img" src="img/logo.svg" alt=""/>
+    <img id="logo-img" class="logo-img" src="img/logo/logo0.svg" alt=""/>
 </header>
 
 <section class="hero">
