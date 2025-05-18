@@ -54,12 +54,39 @@ nav ul {
     list-style: none;
     display: flex;
     gap: 40px;
+    align-items: center;
 }
 
 nav a {
     text-decoration: none;
     color: #2d2d2d;
     font-size: 1rem;
+}
+
+.links {
+    display: flex;
+}
+
+.tg-link {
+    margin: 0 25px;
+}
+
+.tg-link button{
+    border: 1px solid #229ED9;
+    background: none;
+    border-radius: 5px;
+    padding: 7px 10px;
+    align-items: center;
+    display: flex;
+    width: 100px;
+    justify-content: space-around;
+    color: #229ED9;
+    cursor: pointer;
+}
+
+.tg-link img {
+    height: 20px;
+    width: 20px;
 }
 
 section {
