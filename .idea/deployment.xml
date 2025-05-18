@@ -5,7 +5,7 @@
       <paths name="chestno-game">
         <serverdata>
           <mappings>
-            <mapping deploy="/www/chestno-game.ru/" local="$PROJECT_DIR$" web="/" />
+            <mapping deploy="/www/chestno-game.ru/" local="$PROJECT_DIR$/src" web="/" />
           </mappings>
         </serverdata>
       </paths>
