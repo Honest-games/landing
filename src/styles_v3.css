@@ -69,6 +69,7 @@ nav a {
 
 .tg-link {
     margin: 0 25px;
+    text-decoration: none;
 }
 
 .tg-link button{
@@ -82,6 +83,12 @@ nav a {
     justify-content: space-around;
     color: #229ED9;
     cursor: pointer;
+    height: 100%;
+    transition: .3s background-color;
+}
+
+.tg-link button:hover {
+    background-color: rgba(34, 158, 217, 0.1);
 }
 
 .tg-link img {
@@ -124,6 +131,15 @@ header .play-button-link {
     display: none;
 }
 
+#tg-link-1 {
+    display: none;
+}
+
+.header-links {
+    display: flex;
+    align-items: center;
+}
+
 .play-button {
     background-color: var(--accent);
     color: white;
@@ -134,7 +150,7 @@ header .play-button-link {
     cursor: pointer;
 }
 
-.hero img {
+#people_1_svg {
     max-width: 600px;
     width: 50%;
     margin-top: 20px;
@@ -282,6 +298,14 @@ footer {
         font-size: 1.6rem;
     }
 
+    #tg-link-1 {
+        display: flex;
+    }
+
+    #tg-link-2 {
+        display: none;
+    }
+
     .hero p,
     .brand-idea p,
     .deck-section p {
@@ -319,7 +343,7 @@ footer {
         max-width: 100%;
     }
 
-    .hero img {
+    #people_1_svg {
         order: 1;
         width: 100%;
         margin-bottom: 50px;
