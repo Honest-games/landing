@@ -29,6 +29,10 @@
                 <span></span>
                 <span></span>
             </button>
+            <!-- Telegram иконка только для мобильного хедера -->
+            <a href="https://t.me/chestnoGame" target="_blank" rel="noopener" class="header-icon header-icon--telegram-mobile" aria-label="Открыть Telegram канал">
+                <img src="img/telegram.svg" alt="Telegram">
+            </a>
             
             <div class="logo">ЧЕСТНО</div>
             
@@ -42,7 +46,7 @@
                     <a href="#app-store-buttons" class="header-icon" aria-label="К блоку App Store">
                         <img class="apple-icon" src="img/apple.svg" alt="App Store">
                     </a>
-                    <a href="https://t.me/chestnoGame" target="_blank" rel="noopener" class="header-icon" aria-label="Открыть Telegram канал">
+                    <a href="https://t.me/chestnoGame" target="_blank" rel="noopener" class="header-icon header-icon--telegram-desktop" aria-label="Открыть Telegram канал">
                         <img src="img/telegram.svg" alt="Telegram">
                     </a>
                 </div>
@@ -62,9 +66,9 @@
         <div class="hero-content">
             <!-- Главный заголовок -->
             <div class="hero-main-title">
-                <h1 class="hero-title">
-                    <span class="title-line">ЛЕГКО ОБЩ<span class="title-accent">А</span>ТЬСЯ</span>
-                    <span class="title-line">ЧЕСТН<span class="title-accent">О</span> ГОВ<span class="title-accent">О</span>РИТЬ</span>
+                <h1 class="hero-title" aria-label="Легко общаться честно говорить">
+                    <span class="visually-hidden">Легко общаться честно говорить</span>
+                    <img src="img/text-start.svg" alt="" aria-hidden="true" class="hero-title-image" width="1065" height="232">
                 </h1>
             </div>
             
@@ -78,7 +82,7 @@
             
             <!-- Кнопки -->
             <div class="hero-cta">
-                <button class="btn btn-primary">К играм</button>
+                <a href="#app-store-buttons" class="btn btn-primary" aria-label="Перейти к кнопке скачивания приложения в блоке Начать общение">К играм</a>
             </div>
             
             <!-- Фоновые декоративные элементы -->
@@ -87,7 +91,6 @@
     </section>
 
     
-
     <!-- Brand Idea Section -->
     <section id="idea" class="brand-idea-section section-anchor">
         <h2 class="section-title">ИДЕЯ БРЕНДА</h2>
@@ -183,20 +186,18 @@
     <section id="how-to" class="openness-levels section-anchor">
         <h2 class="section-title">УРОВНИ ОТКРЫТОСТИ</h2>
         
-        <div class="levels-container">
-            <div class="level-card level-acquaintance">
-                <div class="level-icon"></div>
-                <h3 class="level-title">ЗНАКОМСТВО</h3>
+        <div class="levels-row">
+            <div class="level-item level-item--1">
+                <img class="level-banner" src="img/levels-block/first.svg" alt="Знакомство" loading="lazy">
+                <p class="level-text">Узнать новых людей, составить первое впечатление, обменяться контактами. Для легких, общих тем, подходящих даже незнакомцам</p>
             </div>
-            
-            <div class="level-card level-closeness">
-                <div class="level-icon"></div>
-                <h3 class="level-title">СБЛИЖЕНИЕ</h3>
+            <div class="level-item level-item--2">
+                <img class="level-banner" src="img/levels-block/second.svg" alt="Сближение" loading="lazy">
+                <p class="level-text">С друзьями посмеяться, удивиться себе и друг другу, вместе создать воспоминания. Для интересной оживленной беседы в кругу приятелей</p>
             </div>
-            
-            <div class="level-card level-openness">
-                <div class="level-icon"></div>
-                <h3 class="level-title">ОТКРЫТОСТЬ</h3>
+            <div class="level-item level-item--3">
+                <img class="level-banner" src="img/levels-block/three.svg" alt="Открытость" loading="lazy">
+                <p class="level-text">Понять себя и друг друга, увидеть с неожиданной стороны, разделить переживания. Откровенные и глубокие вопросы для доверительной беседы</p>
             </div>
         </div>
         
@@ -204,7 +205,7 @@
     </section>
 
     <!-- Start Communication -->
-    <section class="start-communication section-anchor">
+    <section id="start-communication" class="start-communication section-anchor">
         <h2 class="section-title">НАЧАТЬ ОБЩЕНИЕ</h2>
         <div class="communication-background">
             <img src="img/lets-communication-block/rounded-line.svg" alt="" class="rounded-line">
@@ -220,12 +221,11 @@
                 </div>
                 <h3 class="product-title">карточная игра</h3>
                 <div class="product-description">
-                    <p>Одно - зато приятное</p>
-                    <p>Поставь на полку чел ты</p>
+                    <p>Скоро в продаже</p>
                 </div>
-                <div class="product-buttons">
+                <!-- <div class="product-buttons">
                     <button class="product-btn">Тут текст про карточки</button>
-                </div>
+                </div> -->
             </div>
             
             <!-- Приложение -->
@@ -270,9 +270,9 @@
                         <p>Мы создаем игры, которые помогают растопить лед и найти приятные темы для общения. Главная идея - объединять людей вместе - создавать доверие и открытость. Раскройтесь друг перед другом без страха осуждения.</p>
                     </div>
                 </div>
-                <div class="chat-cta">
-                    <a class="btn btn-primary" href="#download-app" aria-label="Перейти к блоку загрузки приложения">Купить</a>
-                </div>
+                <!-- <div class="chat-cta">
+                    <a  class="btn btn-primary" href="#app-store-buttons" aria-label="Перейти к блоку загрузки приложения">Купить</a>
+                </div> -->
             </div>
         </div>
     </section>
@@ -303,7 +303,7 @@
                     </div>
                 </div>
                 <div class="member-description hidden">
-                    <p>разработчик в игре, а также создатель, кароче плейбой гений и миллиардер</p>
+                    <p>Frontend и Mobile разработчик</p>
                 </div>
                 <div class="member-role-container">
                     <svg class="work-border" width="164" height="81" viewBox="0 0 164 81" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -325,13 +325,13 @@
                     </div>
                 </div>
                 <div class="member-description hidden">
-                    <p>разработчик в игре, а также создатель, кароче плейбой гений и миллиардер</p>
+                    <p>Бренд‑дизайнер и дизайнер карточной коробки</p>
                 </div>
                 <div class="member-role-container">
                     <svg class="work-border" width="164" height="81" viewBox="0 0 164 81" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M117.323 22.5986L113.569 22.5986C113.569 22.5986 95.0098 22.5728 95.0032 22.5664L85.7932 2.60586C84.8007 0.464699 81.7108 0.464699 80.725 2.60586L71.5215 22.5599C71.5215 22.5599 59.9758 22.5857 59.9758 22.5922L13.5001 22.5922C6.61236 22.5921 1.03467 28.4481 1.03467 35.6713L1.03465 66.9208C1.03465 74.144 6.61896 80 13.5 80L150.5 80C157.387 80 162.965 74.1441 162.965 66.9209L162.965 35.6713C162.965 28.4481 157.381 22.5922 150.499 22.5922L117.323 22.5986Z" stroke="#783E19" stroke-width="2" stroke-miterlimit="10"/>
                     </svg>
-                    <div class="member-role">back-end</div>
+                    <div class="member-role">design</div>
                 </div>
             </div>
             
@@ -347,7 +347,7 @@
                     </div>
                 </div>
                 <div class="member-description hidden">
-                    <p>разработчик в игре, а также создатель, кароче плейбой гений и миллиардер</p>
+                    <p>Дизайнер мобильного приложения</p>
                 </div>
                 <div class="member-role-container">
                     <svg class="work-border" width="164" height="81" viewBox="0 0 164 81" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -369,70 +369,26 @@
                     </div>
                 </div>
                 <div class="member-description hidden">
-                    <p>разработчик в игре, а также создатель, кароче плейбой гений и миллиардер</p>
+                    <p>Backend разработчик и СЕО проекта</p>
                 </div>
                 <div class="member-role-container">
                     <svg class="work-border" width="164" height="81" viewBox="0 0 164 81" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M117.323 22.5986L113.569 22.5986C113.569 22.5986 95.0098 22.5728 95.0032 22.5664L85.7932 2.60586C84.8007 0.464699 81.7108 0.464699 80.725 2.60586L71.5215 22.5599C71.5215 22.5599 59.9758 22.5857 59.9758 22.5922L13.5001 22.5922C6.61236 22.5921 1.03467 28.4481 1.03467 35.6713L1.03465 66.9208C1.03465 74.144 6.61896 80 13.5 80L150.5 80C157.387 80 162.965 74.1441 162.965 66.9209L162.965 35.6713C162.965 28.4481 157.381 22.5922 150.499 22.5922L117.323 22.5986Z" stroke="#783E19" stroke-width="2" stroke-miterlimit="10"/>
                     </svg>
-                    <div class="member-role">design</div>
+                    <div class="member-role">back-end</div>
                 </div>
             </div>
         </div>
         
-       
-
     <!-- Newsletter -->
     <section class="newsletter">
         <div class="newsletter-content">
-            <h2 class="newsletter-title">ЧЕСТНО</h2>
-            <p class="newsletter-description">
-                Хочешь быть первым, кто узнает о новых колодах карт?<br>
-                Подпишитесь на рассылку!
-            </p>
-            
-            <form class="newsletter-form">
-                <div class="form-group">
-                    <label for="email">E-mail</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <button type="submit" class="btn btn-secondary">Подписаться</button>
-            </form>
-            
-            <p class="contact-info">
-                Напишите нам на почту<br>
-                <strong>chestno_shop@gmail.com</strong>
-            </p>
+            <h2 class="newsletter-title">© 2025 Честно. Все права защищены.</h2>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>Каталог</h3>
-                <ul>
-                    <li><a href="#how-to">Как играть</a></li>
-                    <li><a href="#idea">Идея</a></li>
-                    <li><a href="#about">О нас</a></li>
-                    <li><a href="#buy">Купить</a></li>
-                </ul>
-            </div>
-            
-            <!-- <div class="footer-section">
-                <h3>Помощь</h3>
-                <ul>
-                    <li><a href="#">Политика конфиденциальности</a></li>
-                    <li><a href="#">Пользовательское соглашение</a></li>
-                    <li><a href="#">Доставка</a></li>
-                    <li><a href="#">Оплата</a></li>
-                    <li><a href="#">Обмен и возврат</a></li>
-                </ul>
-            </div> -->
-        </div>
-        
-        
-    </footer>
+    
 
     <script>
         // Интерактивность для карточек идей бренда
@@ -442,7 +398,9 @@
                 const params = new URLSearchParams(window.location.search);
                 const target = params.get('to'); // to=app
                 if (target === 'app') {
-                    document.querySelector('#app-store-buttons')?.scrollIntoView({ behavior: 'smooth' });
+                    const el = document.querySelector('#app-store-buttons');
+                    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+                    el?.scrollIntoView({ behavior: prefersReduced ? 'auto' : 'smooth', block: 'center' });
                 }
             } catch (e) {}
 
@@ -553,6 +511,20 @@
                     });
                 });
             }
+
+            // Гарантированный скролл к кнопке App Store на всех устройствах
+            try {
+                const anchorsToApp = document.querySelectorAll('a[href="#app-store-buttons"]');
+                const prefersReducedApp = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+                anchorsToApp.forEach(anchor => {
+                    anchor.addEventListener('click', function(e) {
+                        // Принудительно центрируем цель в вьюпорте, чтобы на мобилках кнопка точно попала в кадр
+                        e.preventDefault();
+                        const el = document.querySelector('#app-store-buttons');
+                        el?.scrollIntoView({ behavior: prefersReducedApp ? 'auto' : 'smooth', block: 'center' });
+                    });
+                });
+            } catch (_) {}
             
             // Мобильные слайдеры
             function initMobileSliders() {
@@ -605,7 +577,7 @@
                 '.hero-cta',
                 '.section-title',
                 '.brand-card',
-                '.level-card',
+                '.level-item',
                 '.product-section',
                 '.chat-left-part',
                 '.chat-right-part',
