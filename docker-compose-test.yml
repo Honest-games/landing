@@ -1,0 +1,14 @@
+version: "3.8"
+name: honest-landing-test
+
+services:
+  honest-landing-test:
+    image: ${IMAGE}
+    container_name: honest-landing-test
+    hostname: honest-landing-test
+    networks:
+      - dc-net
+
+networks:
+  dc-net:
+    external: true
