@@ -2,15 +2,54 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#FFF5E4">
+    <meta name="description" content="Игры на сближение Честно - растопите лед и создайте доверие. Делитесь историями, обсуждайте мечты и находите общие темы.">
     <title>Честно — разговорные игры</title>
-    <link rel="stylesheet" href="styles_v3.css">
+    <!-- Критичный CSS inline -->
+    <style>
+        /* Критичные стили для первого экрана */
+        :root{--cream:#FFF5E4;--orange:#F89950;--brown:#673C28;--font-primary:'Montserrat',sans-serif;--font-display:'Makan Hati Cyrillic','Unbounded','Arial Black','Helvetica Neue',Arial,sans-serif}
+        *{margin:0;padding:0;box-sizing:border-box}
+        html{overflow-x:hidden;width:100%;max-width:100vw}
+        body{overflow:hidden;font-family:var(--font-primary);background-color:var(--cream);color:var(--brown);line-height:1.4;overflow-x:hidden;width:100%;max-width:100vw}
+        .header{padding:20px 0;background-color:var(--cream);position:sticky;top:0;z-index:1000;box-shadow:0 2px 10px rgba(0,0,0,0.1)}
+        .header-content{max-width:1920px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding:0 80px;position:relative}
+        .logo{font-family:var(--font-display);font-size:36px;font-weight:400;color:#BE4B0F;text-transform:uppercase;letter-spacing:2px;z-index:1001}
+        .mobile-menu-toggle{display:none;flex-direction:column;background:none;border:none;cursor:pointer;padding:10px;z-index:1002;position:relative}
+        .mobile-menu-toggle span{width:25px;height:3px;background-color:var(--brown);margin:3px 0;transition:0.3s;border-radius:2px}
+        .nav{display:flex;justify-content:flex-end;align-items:center;width:auto}
+        .nav-links{display:flex;align-items:center;gap:32px}
+        .nav-link{text-decoration:none;color:var(--brown);font-weight:600;font-size:18px;transition:color 0.2s ease;position:relative}
+        .hero-section{padding:120px 0;position:relative;min-height:50vh;display:flex;align-items:center;justify-content:center;background-color:var(--cream)}
+        .hero-content{max-width:1920px;width:100%;margin:0 auto;padding:0 80px;position:relative;text-align:center;display:flex;flex-direction:column;align-items:center;gap:40px}
+        .hero-title-image{display:block;width:min(100%,1065px);height:auto;margin:0 auto}
+        .visually-hidden{position:absolute!important;height:1px;width:1px;overflow:hidden;clip:rect(1px,1px,1px,1px);white-space:nowrap}
+        @media (max-width:768px){
+            .header-content{padding:0 20px}
+            .mobile-menu-toggle{display:flex}
+            .logo{font-size:20px;position:absolute;left:50%;transform:translateX(-50%)}
+            .nav{position:fixed;top:0;left:-100%;width:100%;height:100vh;background-color:var(--cream);display:flex;justify-content:center;align-items:center;transition:left 0.3s ease;z-index:1000}
+            .nav.active{left:0}
+            .nav-links{flex-direction:column;gap:30px;align-items:center}
+            .hero-section{padding:40px 0 60px}
+            .hero-content{padding:0 20px;gap:30px}
+            body.menu-open{overflow:hidden;position:fixed;width:100%;height:100%}
+        }
+    </style>
+    
+    <!-- Основной CSS загружается асинхронно -->
+    <link rel="preload" href="styles_v2.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="styles_v2.css"></noscript>
+    <link rel="preload" href="img/text-start.svg" as="image">
+    <link rel="preload" href="fonts/MakanHatiCyrillic.otf" as="font" type="font/otf" crossorigin>
     <link rel="shortcut icon" href="img/favicon.ico">
     
     <!-- Шрифты -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Unbounded:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Unbounded:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Unbounded:wght@400;500;600;700&display=swap"></noscript>
     
     <meta property="og:title" content="Честно: игры на сближение">
     <meta property="og:description" content="Сайт бренда Честно">
@@ -109,7 +148,7 @@
                         </svg>
                     </div>
                     <div class="card-image">
-                        <img src="img/brand-block/first-img.svg" alt="Декоративная картинка" loading="lazy">
+                        <img src="img/brand-block/first-img.svg" alt="Декоративная картинка" loading="lazy" decoding="async">
                     </div>
                     <div class="card-content">
                         <p>Мы создаем игры, которые помогают растопить лед и найти приятные темы для общения.</p>
@@ -130,7 +169,7 @@
                         </svg>
                     </div>
                     <div class="card-image">
-                        <img src="img/brand-block/second-img.svg" alt="Декоративная картинка" loading="lazy">
+                        <img src="img/brand-block/second-img.svg" alt="Декоративная картинка" loading="lazy" decoding="async">
                     </div>
                     <div class="card-content">
                         <p>Бренд верит, что легкое общение может привести к важным открытиям о друзьях, коллегах или даже о себе самом.</p>
@@ -150,7 +189,7 @@
                         </svg>
                     </div>
                     <div class="card-image">
-                        <img src="img/brand-block/three-img.svg" alt="Декоративная картинка" loading="lazy">
+                        <img src="img/brand-block/three-img.svg" alt="Декоративная картинка" loading="lazy" decoding="async">
                     </div>
                     <div class="card-content">
                         <p>Главная идея - объединять людей вместе - создавать доверие и открытость.</p>
@@ -170,7 +209,7 @@
                         </svg>
                     </div>
                     <div class="card-image">
-                        <img src="img/brand-block/third-img.svg" alt="Декоративная картинка" loading="lazy">
+                        <img src="img/brand-block/third-img.svg" alt="Декоративная картинка" loading="lazy" decoding="async">
                     </div>
                     <div class="card-content">
                         <p>Раскройтесь друг перед другом без страха осуждения. Выбирайте комфортный уровень открытости во время игры.</p>
@@ -188,15 +227,15 @@
         
         <div class="levels-row">
             <div class="level-item level-item--1">
-                <img class="level-banner" src="img/levels-block/first.svg" alt="Знакомство" loading="lazy">
+                <img class="level-banner" src="img/levels-block/first.svg" alt="Знакомство" loading="lazy" decoding="async">
                 <p class="level-text">Узнать новых людей, составить первое впечатление, обменяться контактами. Для легких, общих тем, подходящих даже незнакомцам</p>
             </div>
             <div class="level-item level-item--2">
-                <img class="level-banner" src="img/levels-block/second.svg" alt="Сближение" loading="lazy">
+                <img class="level-banner" src="img/levels-block/second.svg" alt="Сближение" loading="lazy" decoding="async">
                 <p class="level-text">С друзьями посмеяться, удивиться себе и друг другу, вместе создать воспоминания. Для интересной оживленной беседы в кругу приятелей</p>
             </div>
             <div class="level-item level-item--3">
-                <img class="level-banner" src="img/levels-block/three.svg" alt="Открытость" loading="lazy">
+                <img class="level-banner" src="img/levels-block/three.svg" alt="Открытость" loading="lazy" decoding="async">
                 <p class="level-text">Понять себя и друг друга, увидеть с неожиданной стороны, разделить переживания. Откровенные и глубокие вопросы для доверительной беседы</p>
             </div>
         </div>
@@ -217,7 +256,7 @@
             <!-- Карточки -->
             <div class="product-section product-cards">
                 <div class="product-cards-image">
-                    <img src="img/lets-communication-block/cards.svg" alt="Карточки" class="cards-image">
+                    <img src="img/lets-communication-block/cards.svg" alt="Карточки" class="cards-image" loading="lazy" decoding="async">
                 </div>
                 <h3 class="product-title">карточная игра</h3>
                 <div class="product-description">
@@ -231,7 +270,7 @@
             <!-- Приложение -->
             <div class="product-section product-app">
                 <div class="product-app-image">
-                    <img src="img/iphone-mockup.png" alt="Приложение на телефоне" class="phone-mockup">
+                    <img src="img/iphone-mockup.png" alt="Приложение на телефоне" class="phone-mockup" loading="lazy" decoding="async">
                 </div>
                 <h3 class="product-title">приложение</h3>
                 <div class="product-description">
@@ -259,7 +298,7 @@
                     <img src="img/arrow-rounded2.svg" alt="" class="arrow-background">
                 </div>
                 <div class="chat-game-box">
-                    <img src="img/game-box.png" alt="Коробка игры" class="game-box-image" loading="lazy">
+                    <img src="img/game-box.png" alt="Коробка игры" class="game-box-image" loading="lazy" decoding="async">
                 </div>
             </div>
             
@@ -298,7 +337,7 @@
                             <svg width="327" height="473" viewBox="0 0 327 473" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path opacity="0.7" d="M304.243 0C316.376 0 326.211 9.83527 326.211 21.9678V390.649C326.211 402.782 316.375 412.617 304.243 412.617H246.307C234.174 412.617 224.339 422.453 224.339 434.585V451.032C224.339 463.165 214.503 473 202.371 473H21.9678C9.83543 473 0.000224498 463.165 0 451.032V82.3509C0 70.2183 9.83545 60.3828 21.9681 60.3828H79.905C92.0376 60.3828 101.873 50.5474 101.873 38.4147V21.9681C101.873 9.83544 111.708 0 123.841 0H304.243Z" fill="#F3BA77" fill-opacity="0.15"/>
                             </svg>
-                            <img src="img/team-image-1.png" alt="Член команды" loading="lazy">
+                            <img src="img/team-image-1.png" alt="Член команды" loading="lazy" decoding="async">
                         </div>
                     </div>
                 </div>
@@ -320,7 +359,7 @@
                             <svg width="327" height="473" viewBox="0 0 327 473" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path opacity="0.7" d="M304.243 0C316.376 0 326.211 9.83527 326.211 21.9678V390.649C326.211 402.782 316.375 412.617 304.243 412.617H246.307C234.174 412.617 224.339 422.453 224.339 434.585V451.032C224.339 463.165 214.503 473 202.371 473H21.9678C9.83543 473 0.000224498 463.165 0 451.032V82.3509C0 70.2183 9.83545 60.3828 21.9681 60.3828H79.905C92.0376 60.3828 101.873 50.5474 101.873 38.4147V21.9681C101.873 9.83544 111.708 0 123.841 0H304.243Z" fill="#F3BA77" fill-opacity="0.15"/>
                             </svg>
-                            <img src="img/team-image-2.png" alt="Член команды" loading="lazy">
+                            <img src="img/team-image-2.png" alt="Член команды" loading="lazy" decoding="async">
                         </div>
                     </div>
                 </div>
@@ -342,7 +381,7 @@
                             <svg width="327" height="473" viewBox="0 0 327 473" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path opacity="0.7" d="M304.243 0C316.376 0 326.211 9.83527 326.211 21.9678V390.649C326.211 402.782 316.375 412.617 304.243 412.617H246.307C234.174 412.617 224.339 422.453 224.339 434.585V451.032C224.339 463.165 214.503 473 202.371 473H21.9678C9.83543 473 0.000224498 463.165 0 451.032V82.3509C0 70.2183 9.83545 60.3828 21.9681 60.3828H79.905C92.0376 60.3828 101.873 50.5474 101.873 38.4147V21.9681C101.873 9.83544 111.708 0 123.841 0H304.243Z" fill="#F3BA77" fill-opacity="0.15"/>
                             </svg>
-                            <img src="img/team-image-3.png" alt="Член команды" loading="lazy">
+                            <img src="img/team-image-3.png" alt="Член команды" loading="lazy" decoding="async">
                         </div>
                     </div>
                 </div>
@@ -364,7 +403,7 @@
                             <svg width="327" height="473" viewBox="0 0 327 473" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path opacity="0.7" d="M304.243 0C316.376 0 326.211 9.83527 326.211 21.9678V390.649C326.211 402.782 316.375 412.617 304.243 412.617H246.307C234.174 412.617 224.339 422.453 224.339 434.585V451.032C224.339 463.165 214.503 473 202.371 473H21.9678C9.83543 473 0.000224498 463.165 0 451.032V82.3509C0 70.2183 9.83545 60.3828 21.9681 60.3828H79.905C92.0376 60.3828 101.873 50.5474 101.873 38.4147V21.9681C101.873 9.83544 111.708 0 123.841 0H304.243Z" fill="#F3BA77" fill-opacity="0.15"/>
                             </svg>
-                            <img src="img/team-image-4.png" alt="Член команды" loading="lazy">
+                            <img src="img/team-image-4.png" alt="Член команды" loading="lazy" decoding="async">
                         </div>
                     </div>
                 </div>
@@ -390,19 +429,60 @@
     <!-- Footer -->
     
 
+    <!-- Критичный JavaScript для мобильного меню -->
     <script>
-        // Интерактивность для карточек идей бренда
-        document.addEventListener('DOMContentLoaded', function() {
-            // Deep-link: быстрый скролл к кнопке App Store
+        // Критичный код - мобильное меню
+        function initMobileMenu() {
+            const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+            const navMenu = document.querySelector('#nav-menu');
+            
+            if (mobileMenuToggle && navMenu) {
+                mobileMenuToggle.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                    navMenu.classList.toggle('active');
+                    document.body.classList.toggle('menu-open');
+                });
+                
+                const navLinks = navMenu.querySelectorAll('.nav-link, .header-icon');
+                navLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileMenuToggle.classList.remove('active');
+                        navMenu.classList.remove('active');
+                        document.body.classList.remove('menu-open');
+                    });
+                });
+            }
+        }
+
+        // Deep-link скролл к App Store
+        function initDeepLink() {
             try {
                 const params = new URLSearchParams(window.location.search);
-                const target = params.get('to'); // to=app
+                const target = params.get('to');
                 if (target === 'app') {
                     const el = document.querySelector('#app-store-buttons');
                     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
                     el?.scrollIntoView({ behavior: prefersReduced ? 'auto' : 'smooth', block: 'center' });
                 }
             } catch (e) {}
+        }
+
+        // Инициализация критичного кода
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', function() {
+                initMobileMenu();
+                initDeepLink();
+            });
+        } else {
+            initMobileMenu();
+            initDeepLink();
+        }
+    </script>
+
+    <!-- Некритичный JavaScript загружается асинхронно -->
+    <script>
+        // Загружаем остальной код после полной загрузки страницы
+        window.addEventListener('load', function() {
 
             const brandCards = document.querySelectorAll('.brand-card');
             let activeBrandCard = null;
@@ -490,27 +570,7 @@
                 }
             });
             
-            // Мобильное меню
-            const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-            const navMenu = document.querySelector('#nav-menu');
-            
-            if (mobileMenuToggle && navMenu) {
-                mobileMenuToggle.addEventListener('click', function() {
-                    this.classList.toggle('active');
-                    navMenu.classList.toggle('active');
-                    document.body.classList.toggle('menu-open');
-                });
-                
-                // Закрываем меню при клике на ссылку/иконку
-                const navLinks = navMenu.querySelectorAll('.nav-link, .header-icon');
-                navLinks.forEach(link => {
-                    link.addEventListener('click', () => {
-                        mobileMenuToggle.classList.remove('active');
-                        navMenu.classList.remove('active');
-                        document.body.classList.remove('menu-open');
-                    });
-                });
-            }
+            // Мобильное меню уже инициализировано в критичном коде
 
             // Гарантированный скролл к кнопке App Store на всех устройствах
             try {
@@ -527,6 +587,11 @@
             } catch (_) {}
             
             // Мобильные слайдеры
+            function centerFirstCard(container, selector) {
+                // Просто устанавливаем начало прокрутки, чтобы первая карточка была видна
+                container.scrollLeft = 0;
+            }
+
             function initMobileSliders() {
                 if (window.innerWidth <= 1200) {
                     const brandCardsContainer = document.querySelector('.brand-cards-container');
@@ -534,8 +599,10 @@
                     
                     if (brandCardsContainer && !brandCardsContainer.classList.contains('mobile-slider')) {
                         brandCardsContainer.classList.add('mobile-slider');
-                        // Всегда начинать прокрутку с первой карточки
-                        brandCardsContainer.scrollLeft = 0;
+                        // Центрируем первую карточку
+                        setTimeout(() => {
+                            centerFirstCard(brandCardsContainer, '.brand-card');
+                        }, 100);
                         // На всякий случай сбросить transform активных карточек
                         if (activeBrandCard) {
                             activeBrandCard.classList.remove('active');
@@ -545,7 +612,9 @@
                     
                     if (teamGrid && !teamGrid.classList.contains('mobile-slider')) {
                         teamGrid.classList.add('mobile-slider');
-                        teamGrid.scrollLeft = 0;
+                        setTimeout(() => {
+                            centerFirstCard(teamGrid, '.team-member');
+                        }, 100);
                     }
                 } else {
                     const brandCardsContainer = document.querySelector('.brand-cards-container');
@@ -564,7 +633,67 @@
             }
             
             initMobileSliders();
-            window.addEventListener('resize', initMobileSliders);
+            window.addEventListener('resize', () => {
+                initMobileSliders();
+                setTimeout(addSliderCentering, 200);
+            });
+
+            // Центрирование карточек при прокрутке слайдера
+            function addSliderCentering() {
+                const brandSlider = document.querySelector('.brand-cards-container.mobile-slider');
+                const teamSlider = document.querySelector('.team-grid.mobile-slider');
+                
+                if (brandSlider) {
+                    brandSlider.addEventListener('scroll', function() {
+                        const cards = this.querySelectorAll('.brand-card');
+                        const containerWidth = this.offsetWidth;
+                        
+                        cards.forEach(card => {
+                            const cardRect = card.getBoundingClientRect();
+                            const containerRect = this.getBoundingClientRect();
+                            const cardCenter = cardRect.left + cardRect.width / 2;
+                            const containerCenter = containerRect.left + containerRect.width / 2;
+                            const distance = Math.abs(cardCenter - containerCenter);
+                            
+                            // Если карточка близко к центру, делаем её активной
+                            if (distance < cardRect.width / 2) {
+                                card.classList.add('active');
+                                if (activeBrandCard && activeBrandCard !== card) {
+                                    activeBrandCard.classList.remove('active');
+                                }
+                                activeBrandCard = card;
+                            }
+                        });
+                    });
+                }
+                
+                if (teamSlider) {
+                    teamSlider.addEventListener('scroll', function() {
+                        const members = this.querySelectorAll('.team-member');
+                        const containerWidth = this.offsetWidth;
+                        
+                        members.forEach(member => {
+                            const memberRect = member.getBoundingClientRect();
+                            const containerRect = this.getBoundingClientRect();
+                            const memberCenter = memberRect.left + memberRect.width / 2;
+                            const containerCenter = containerRect.left + containerRect.width / 2;
+                            const distance = Math.abs(memberCenter - containerCenter);
+                            
+                            // Если участник близко к центру, делаем его активным
+                            if (distance < memberRect.width / 2) {
+                                member.classList.add('active');
+                                if (activeTeamMember && activeTeamMember !== member) {
+                                    activeTeamMember.classList.remove('active');
+                                }
+                                activeTeamMember = member;
+                            }
+                        });
+                    });
+                }
+            }
+
+            // Добавляем центрирование после инициализации слайдеров
+            setTimeout(addSliderCentering, 200);
 
             // Reveal on scroll + Parallax
             const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;

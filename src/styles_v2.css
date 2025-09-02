@@ -44,7 +44,6 @@ html {
 }
 
 body {
-    overflow: hidden;
     font-family: var(--font-primary);
     background-color: var(--cream);
     color: var(--brown);
@@ -56,7 +55,7 @@ body {
 
 /* Header */
 .header {
-    padding: 40px 0;
+    padding: 20px 0;
     background-color: var(--cream);
     position: sticky;
     top: 0;
@@ -76,7 +75,7 @@ body {
 
 .logo {
     font-family: var(--font-display);
-    font-size: 48px;
+    font-size: 36px;
     font-weight: 400;
     color: #BE4B0F;
     text-transform: uppercase;
@@ -168,9 +167,9 @@ body {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 44px;
-    height: 44px;
-    border-radius: 10px;
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
     background: var(--cream);
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     transition: transform .2s ease, box-shadow .2s ease;
@@ -213,7 +212,7 @@ body {
 
 /* Hero Section - Легко общаться честно говорить */
 .hero-section {
-    padding: 60px 0;
+    padding: 120px 0;
     position: relative;
     min-height: 50vh;
     display: flex;
@@ -1426,7 +1425,7 @@ body {
 
     .communication-content {
         flex-direction: column;
-        gap: 60px;
+        gap: 0px;
         padding: 0 20px;
     }
 
@@ -1522,9 +1521,11 @@ body {
         justify-content: flex-start;
         gap: 20px;
         padding-top: 30px;
+        padding-left: 20px;
+        padding-right: 20px;
         -webkit-overflow-scrolling: touch;
-        scroll-padding-left: 0;
-        scroll-padding-right: 0;
+        scroll-padding-left: 20px;
+        scroll-padding-right: 20px;
         scroll-snap-stop: always;
         grid-template-columns: none;
         margin-bottom: 0;
@@ -1582,7 +1583,7 @@ body {
     }
     
     .logo {
-        font-size: 28px;
+        font-size: 20px;
         order: 2;
         position: absolute;
         left: 50%;
@@ -1755,10 +1756,12 @@ body {
         justify-content: flex-start;
         gap: 20px;
         padding-top: 30px; /* Добавляем отступ сверху для анимации */
+        padding-left: 20px;
+        padding-right: 20px;
         -webkit-overflow-scrolling: touch;
         /* Выровнять начальную привязку первой карточки с учетом внутреннего отступа */
-        scroll-padding-left: 0;
-        scroll-padding-right: 0;
+        scroll-padding-left: 20px;
+        scroll-padding-right: 20px;
         scroll-snap-stop: always;
         grid-template-columns: none;
         margin-bottom: 0; /* Убираем дополнительный margin */
@@ -1774,11 +1777,7 @@ body {
         padding-bottom: 100px;
     }
 
-    /* Удаляем внутренние боковые отступы у брендов, чтобы первый элемент был у левого края */
-    .brand-cards-container.mobile-slider {
-        padding-left: 0;
-        padding-right: 0;
-    }
+
     
     .brand-cards-container.mobile-slider .brand-card,
     .team-grid.mobile-slider .team-member {
@@ -2193,7 +2192,7 @@ html {
 /* Адаптация для очень маленьких экранов (320px-480px) */
 @media (max-width: 480px) {
     .header {
-        padding: 20px 0;
+        padding: 10px 0;
     }
     
     .header-content {
@@ -2201,11 +2200,11 @@ html {
     }
     
     .logo {
-        font-size: 24px;
+        font-size: 18px;
     }
     
     .hero-section {
-        padding: 10px 0px;
+        padding: 60px 0px;
     }
     
     .hero-content {
@@ -2235,7 +2234,7 @@ html {
     
     .section-title {
         font-size: 28px;
-        margin-bottom: 30px;
+        margin-bottom: 10px;
     }
 
     .appstore-badge img {
@@ -2274,6 +2273,7 @@ html {
 
     .brand-cards-container.mobile-slider .brand-card {
         flex: 0 0 260px;
+        scroll-snap-align: start;
     }
     
     .brand-card .card-inner {
@@ -2316,11 +2316,11 @@ html {
     }
     
     .phone-mockup {
-        max-width: 300px;
+        width: 900px;
     }
 
     .cards-image {
-        max-width: 300px;
+        width: 800px;
     }
 
     .communication-background {
@@ -2344,6 +2344,7 @@ html {
     
     .team-grid.mobile-slider .team-member {
         flex: 0 0 240px;
+        scroll-snap-align: start;
     }
     
     .member-description {
