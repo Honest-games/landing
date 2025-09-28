@@ -412,13 +412,12 @@
             z-index: 1000;
             opacity: 0;
             transition: opacity 0.5s ease;
-        }
-        
-        .order-modal.active {
-            display: flex;
             align-items: center;
             justify-content: center;
-            opacity: 1;
+        }
+
+        .order-modal.active {
+            opacity: 1 !important;
         }
         
         .modal-content {
@@ -882,7 +881,7 @@
         function closeOrderModal() {
             const modal = document.getElementById('orderModal');
             modal.classList.remove('active');
-            
+
             // Скрыть модальное окно после завершения анимации
             setTimeout(() => {
                 modal.style.display = 'none';
