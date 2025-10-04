@@ -62,10 +62,12 @@
         .product-main-image {
             width: 100%;
             max-width: 750px;
-            height: auto;
+            height: 500px;
             border-radius: 20px;
             box-shadow: 0 20px 40px rgba(103, 60, 40, 0.1);
             margin-bottom: 20px;
+            object-fit: contain;
+            object-position: center;
         }
         
         .product-thumbnails {
@@ -383,6 +385,10 @@
             
             .product-images {
                 position: static;
+            }
+            
+            .product-main-image {
+                height: 350px;
             }
             
             .product-title {
@@ -715,11 +721,13 @@
         <!-- Основная информация о продукте -->
         <section class="product-layout">
             <div class="product-images">
-                <img src="../img/game-box.png" alt="Игра Честно - карточная игра на сближение" class="product-main-image" id="main-image">
+                <img src="./img/shop-1.jpg" alt="Игра Честно - карточная игра на сближение" class="product-main-image" id="main-image">
                 <div class="product-thumbnails">
-                    <img src="../img/game-box.png" alt="Коробка игры" class="thumbnail active" onclick="changeImage(this, '../img/game-box.png')">
-                    <img src="../img/cards.png" alt="Карточки игры" class="thumbnail" onclick="changeImage(this, '../img/cards.png')">
-                    <img src="../img/game-box.svg" alt="Дизайн коробки" class="thumbnail" onclick="changeImage(this, '../img/game-box.svg')">
+                    <img src="./img/shop-1.jpg" alt="Дизайн коробки" class="thumbnail" onclick="changeImage(this, './img/shop-1.jpg')">
+                    <img src="./img/shop-2.jpg" alt="Дизайн коробки" class="thumbnail" onclick="changeImage(this, './img/shop-2.jpg')">
+                    <img src="./img/shop-3.jpg" alt="Дизайн коробки" class="thumbnail" onclick="changeImage(this, './img/shop-3.jpg')">
+                    <img src="./img/shop-4.jpg" alt="Дизайн коробки" class="thumbnail" onclick="changeImage(this, './img/shop-4.jpg')">
+                    <img src="./img/shop-5.jpg" alt="Дизайн коробки" class="thumbnail" onclick="changeImage(this, './img/shop-5.jpg')">
                 </div>
             </div>
 
